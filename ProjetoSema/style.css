@@ -1,0 +1,43 @@
+
+
+body {
+    background-image: url(img/cidadeFundo.avif);
+    background-size: cover;
+}
+
+/* formação do semaforo */
+
+#semaforo {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    background-color: black;
+    border-radius: 30px;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+}
+
+/* formaão das lampadas */
+
+.lamp {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: silver;
+    margin: 20px;
+    border-radius: 50%;
+}
+
+/* cor opaco para ser ele "apagado" */
+
+#red {
+    background-color: rgb(49, 21, 21);
+}
+
+#yellow {
+    background-color: rgb(48, 48, 20);
+}
+
+#green {
+    background-color: rgb(39, 54, 25);
+}
