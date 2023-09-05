@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .traffic-light {
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .light {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="traffic-light">
+        <div class="light red"></div>
+        <div class="light yellow"></div>
+        <div class="light green"></div>
+        <button id="maintenanceButton">Manutenção</button>
+    </div>
+
+    <script>
+        let intervalId;
+        let maintenanceMode = false;
+        const lights = document.querySelectorAll('.light');
+
+        function toggleMaintenanceMode() {
+            maintenanceMode = !maintenanceMode;
+            if (maintenanceMode) {
+                clearInterval(intervalId);
+                lights[0].style.backgroundColor = 'transparent';
+                lights[1].style.backgroundColor = 'yellow';
+                lights[2].style.backgroundColor = 'transparent';
+            } else {
+                startTrafficLightCycle();
+            }
+        }
+
+        function startTrafficLightCycle() {
+            if (!maintenanceMode) {
+                intervalId = setInterval(() => {
+                    lights[0].style.backgroundColor = 'red';
+                    lights[1].style.backgroundColor = 'transparent';
+                    lights[2].style.backgroundColor = 'transparent';
+
+                    setTimeout(() => {
+                        lights[0].style.backgroundColor = 'transparent';
+                        lights[1].style.backgroundColor = 'yellow';
+                        lights[2].style.backgroundColor = 'transparent';
+                    }, 1000);
+
+                    setTimeout(() => {
+                        lights[0].style.backgroundColor = 'transparent';
+                        lights[1].style.backgroundColor = 'transparent';
+                        lights[2].style.backgroundColor = 'green';
+                    }, 1000);
+
+                    setTimeout(() => {
+                        lights[0].style.backgroundColor = 'transparent';
+                        lights[1].style.backgroundColor = 'yellow';
+                        lights[2].style.backgroundColor = 'transparent';
+                    }, 1000);
+                }, 6000);
+            }
+        }
+
+        startTrafficLightCycle();
+
+        const maintenanceButton = document.getElementById('maintenanceButton');
+        maintenanceButton.addEventListener('click', toggleMaintenanceMode);
+    </script>
+</body>
+</html>
