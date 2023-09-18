@@ -1,0 +1,32 @@
+<!-- A aplicação HTML, com auxílio de códigos em javascript e estilização em CSS, permitiu a realização desses site. Ao apertamos no botão que aparece na tela o evento respectivo acontece, após 10 apertos de portão a lâmpada quebra e aparece o botão "Trocar".
+	Os desafios encontrados na realização desse site foram a concepção da lógica a ser aplicada no javascript, o posicionamento dos elementos em CSS e a organização com o HTML. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lâmpada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="lampada">
+        <img id="ligada" src="img/Ligada-removebg-previewc.png" alt="" onclick="ligarDesligarLampada()">
+        <img id="desligada" src="img/Desligada-removebg-previewc.png" alt="" style="display: none;">
+        <img id="quebrada" src="img/Quebrada-removebg-preview.png" alt="" style="display: none;">
+    </div>
+
+    <div id="buttons">
+        <img id="ligar" src="img/LIGAR.png" alt="Botão 1" onclick="ligarDesligarLampada()">
+        <img id="trocar" src="img/TROCAR.png" alt="" style="display: none;" onclick="trocar()">
+        <img id="desligar" src="img/DESLIGAR.png" alt="" style="display: none;" onclick="ligarDesligarLampada()">
+    </div>
+
+    <div id="mensagem">
+        <p>A lâmpada está <span id="status">desligada</span>.</p>
+        <p>Já foi ligada/desligada <span id="contador">0</span> vezes.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
