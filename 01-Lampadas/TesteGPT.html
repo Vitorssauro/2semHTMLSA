@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lâmpada</title>
+    <style>
+        body {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #lampada {
+            position: relative;
+        }
+
+        #lampada img {
+            /* max-width: 100%; */
+            height: 300px;
+        }
+
+        #buttons img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="lampada">
+        <img id="ligada" src="img/Ligada-removebg-previewc.png" alt="" onclick="ligarDesligarLampada()">
+        <img id="desligada" src="img/Desligada-removebg-previewc.png" alt="" style="display: none;">
+        <img id="quebrada" src="img/Quebrada-removebg-preview.png" alt="" style="display: none;">
+    </div>
+
+    <div id="buttons">
+        <img id="ligar" src="img/LIGAR.png" alt="Botão 1" onclick="ligarDesligarLampada()">
+        <img id="trocar" src="img/TROCAR.png" alt="" style="display: none;" onclick="trocar()">
+        <img id="desligar" src="img/DESLIGAR.png" alt="" style="display: none;" onclick="ligarDesligarLampada()">
+    </div>
+
+    <div id="mensagem">
+        <p>A lâmpada está <span id="status">desligada</span>.</p>
+        <p>Já foi ligada/desligada <span id="contador">0</span> vezes.</p>
+    </div>
+
+    <script>
+        var contador = 0;
+
+        function ligarDesligarLampada() {
+            var ligada = document.getElementById("ligada");
+            var desligada = document.getElementById("desligada");
+            var status = document.getElementById("status");
+            var contadorSpan = document.getElementById("contador");
+
+
+            contador++;
+
+            if (ligada.style.display === "none") {
+                ligada.style.display = "inline";
+                desligada.style.display = "none";
+                status.innerText = "ligada";
+                document.getElementById("ligar").style.display = "none";
+                document.getElementById("desligar").style.display = "inline";
+            } 
+            else {
+                ligada.style.display = "none";
+                desligada.style.display = "inline";
+                document.getElementById("ligar").style.display = "inline";
+                document.getElementById("desligar").style.display = "none";
+                status.innerText = "desligada";
+            }
+
+            contadorSpan.innerText = contador;
+
+            if (contador >= 10) {
+                document.getElementById("ligar").style.display = "none";
+                document.getElementById("ligada").style.display = "none";
+                document.getElementById("quebrada").style.display = "inline";
+                document.getElementById("trocar").style.display = "inline";
+                document.getElementById("desligar").style.display = "none";
+                status.innerText = "quebrada";
+                contador = 0;
+
+            }
+        }
+
+        function trocar() {
+            document.getElementById("desligar").style.display = "none";
+            document.getElementById("ligada").style.display = "inline";
+            document.getElementById("quebrada").style.display = "none";
+            document.getElementById("ligar").style.display = "inline";
+            document.getElementById("trocar").style.display = "none";
+        }
+    </script>
+</body>
+</html>
