@@ -1,0 +1,17 @@
+Criar Casas: Gerar elementos HTML (divs) representando as células do tabuleiro.
+=======================
+Alternar Jogadores: Mudar entre "X" e "O" a cada jogada, atualizando os espaços.
+========================
+Jogadas: Detectar as jogadas nas casas, e executar as funções em resposta.
+========================
+Resultados: Mostrar mensagens de vitória, empate ou informações no DOM.
+========================
+Reiniciar o Jogo: um botão para reiniciar o jogo, redefinindo o tabuleiro.
+========================
+Visual: Modificar classes e estilos para refletir o estado do jogo.
+
+===========================================================
+
+O DOM oferece um modelo de representação e interação do documento HTML ou XML. 
+Esse modelo se estrutura em formato de árvore, com vários galhos que indicam diferentes elementos da página. 
+Quando esse modelo é alterado através da linguagem de script, se altera a página da web — seja sua estrutura, estilo ou elementos.

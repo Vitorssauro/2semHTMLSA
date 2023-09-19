@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #3498db; /* Cor de fundo azul */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #fff; /* Cor do título branca */
+}
+
+.jogo-da-velha {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #fff; /* Cor de fundo branca */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    background-color: #333;
+    border: 3px solid #444;
+    padding: 10px;
+}
+
+.casa {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.casa:hover {
+    background-color: #ddd;
+}
+
+.mensagem {
+    margin-top: 10px;
+    font-size: 1.5em;
+    color: #444;
+}
+
+.reiniciar {
+    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.reiniciar:hover {
+    background-color: #555;
+}
