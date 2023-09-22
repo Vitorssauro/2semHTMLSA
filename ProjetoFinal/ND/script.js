@@ -68,6 +68,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     reiniciarBtn.addEventListener("click", reiniciarJogo);
+    // Função para gerar uma cor aleatória hexadecimal
+function corAleatoria() {
+    const letrasHex = "0123456789ABCDEF";
+    let cor = "#";
+    for (let i = 0; i < 6; i++) {
+        cor += letrasHex[Math.floor(Math.random() * 16)];
+    }
+    return cor;
+    
+}
+// Função para alterar a cor de fundo do HTML
+function mudarCorDeFundo() {
+    document.body.style.backgroundColor = corAleatoria();
+}
+
+// Adicione um ouvinte de evento de clique ao tabuleiro para chamar a função de mudança de cor
+document.querySelector("#tabuleiro").addEventListener("click", mudarCorDeFundo);
+
 });
+
 
 
